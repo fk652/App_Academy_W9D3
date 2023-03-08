@@ -36,4 +36,15 @@ export function unfollowUser(id) {
   )
 }
 
+export function fetchTweets(options = {}) {
+  const queryParams = new URLSearchParams(options);
+  // queryParams.toString()
+  return customFetch(
+    `/tweets/?${queryParams}`,
+    {
+      method: "GET"
+    }
+  ) 
+}
+
 // export const foo = "bar";
